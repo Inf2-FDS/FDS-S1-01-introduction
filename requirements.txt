@@ -1,7 +1,9 @@
 pandas==1.4.2
-numpy==1.21.6
+numpy==1.21
 matplotlib==3.5.2
 seaborn==0.11.2
 scikit-learn==1.1.1
 scipy==1.7.3
 statsmodels==0.13.2
+python==3.9
+jupyter
