@@ -10,8 +10,8 @@ described in the course materials.
 
 ## Running the labs from your laptop (not supported)
 
-If you would like to run the Jupyter notebook on your own machine, you
-should:
+If you would like to run Jupyter notebooks on your own machine, you
+should first install Jupyter:
 
 1. [Install miniconda as described here](https://docs.conda.io/en/latest/miniconda.html)
 2. From the command line, cd into this directory
@@ -20,6 +20,16 @@ should:
    ```
    conda env create -f environment.yml
    ```
+
+To start Jupyter lab:
+
+1. At a command line, activate the "fds" environment created in the
+   installation steps above
+   ```
+   conda activate fds
+   ```
+
+2. Type `jupyter lab`
 
 We don't actively support running Jupyter on your own machine. If you
 have problems, we can't promise to help you fix them - the recommended
