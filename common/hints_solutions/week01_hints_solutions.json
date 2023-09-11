@@ -1,0 +1,36 @@
+{
+    "1": {
+        "typeCode": true,
+        "solution": "###week01_ex1",
+        "hints": {
+            "hint 1 (deletion)": "Click on the cell to delete, and double press the 'd' key",
+            "hint 2 (insertion)": "Click on a nearby cell, and press 'a' or 'b' to create a cell above or below respectively",
+            "hint 3": "Could you utilise 'pd.DataFrame.from_dict' to create this dataframe from a python dictionary?"
+        }
+    },
+    "2": {
+        "typeCode": true,
+        "solution": "###week01_ex2",
+        "hints": {
+            "hint 1": "Could you utilise something like: 'passengers.loc['Someone'] = [null, null, null]"
+        }
+    },
+    "3": {
+        "typeCode": true,
+        "solution": "###week01_ex3",
+        "hints": {
+            "hint 1": "Look at the output of Exercise 01, does the 'passengers' dataframe have similar rows you could slice to get the same output as Ex.1?"
+        }
+    },
+    "5": {
+        "typeCode": true,
+        "solution": "###week01_ex5",
+        "hints": {
+            "What is 'survival rate'?": "Survival Rate is: #survived in group / #total in group",
+            "Hint for Parts a & b & c & d": "Make use of conditions, e.g: `passengers['Age'] <=20` to segregate the groups of individuals. To get the number of people within a group, all you need is `len()`",
+            "Hint 1 for Part e": "These are quite a few computations, think about how to automate it, e.g. `conditions = condition1 & condition2`",
+            "Hint 2 for Part e": "You can create conditions as an array, such as: `class_conditions = [(passengers['Pclass'] == 1), (passengers['Pclass'] == 2)`",
+            "Hint 3 for Part e": "Can you iterate over all possible conditions using nested for loops?"
+        }
+    }
+}
