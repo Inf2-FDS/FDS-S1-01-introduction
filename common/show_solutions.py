@@ -54,8 +54,8 @@ def show(week, question):
 
     # Set the data
     solution = parse_txt_solution(week, question_ans['solution'])
-    if question_ans['typeCode']:
-        sol_area.append_display_data(Code(data=solution))
+    if question_ans['typeCode'] == True:
+        sol_area.append_display_data(Code(data=solution, language="python3"))
     else:
         sol_area.append_display_data(Markdown(data=solution))
     for hint_title, hint in question_ans['hints'].items():

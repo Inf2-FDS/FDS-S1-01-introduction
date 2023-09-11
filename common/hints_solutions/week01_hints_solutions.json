@@ -5,14 +5,14 @@
         "hints": {
             "hint 1 (deletion)": "Click on the cell to delete, and double press the 'd' key",
             "hint 2 (insertion)": "Click on a nearby cell, and press 'a' or 'b' to create a cell above or below respectively",
-            "hint 3": "Could you utilise 'pd.DataFrame.from_dict' to create this dataframe from a python dictionary?"
+            "hint 3": "Could you utilise `pd.DataFrame.from_dict` to create this dataframe from a python dictionary?"
         }
     },
     "2": {
         "typeCode": true,
         "solution": "###week01_ex2",
         "hints": {
-            "hint 1": "Could you utilise something like: 'passengers.loc['Someone'] = [null, null, null]"
+            "hint 1": "Could you utilise something like: `passengers.loc['Someone'] = [null, null, null]`"
         }
     },
     "3": {
