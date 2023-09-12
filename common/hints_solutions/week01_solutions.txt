@@ -1,0 +1,83 @@
+###week01_ex1
+index_key_dict = {'Miss. Laina Heikkinen':['Female', 26.0, True],
+                  'Mrs. Jacques Heath Futrelle':['Female', 35.0, True],
+                 'Mr. William Henry Allen':['Male', 35.0, False]}
+passengers = pd.DataFrame.from_dict(index_key_dict, orient='index')
+passengers.columns = ['Gender', 'Age', 'Survived']
+passengers
+###week01_ex1_end
+
+###week01_ex2
+passengers.loc['Mr. Owen Harris Braund'] = ['Male', 22.0, False]
+passengers.loc['Mrs. John Bradley Cumings'] = ['Female', 38.0, True]
+passengers
+###week01_ex2_end
+
+###week01_ex3
+passengers.iloc[0:5][['Name', 'Sex', 'Age', 'Survived']]
+###week01_ex3_end
+
+###week01_ex5
+# Exercise a
+
+age_groups = ['Minor', 'Adult', 'Senior']
+age_conditions = [(passengers['Age'] <=17), ((passengers['Age'] >17) & (passengers['Age']<=65)), (passengers['Age'] >65)]
+survival_rate_by_age = []
+for condition in age_conditions:
+    survived = len(passengers[condition & passengers['Survived']])
+    total = len(passengers[condition])
+    survival_rate_by_age.append(survived/total)
+    
+for i in range(len(age_groups)):
+    print(age_groups[i] + ': '+ str(survival_rate_by_age[i]))
+    
+# Exercise b
+
+sex_groups = ['Female', 'Male']
+sex_conditions = [(passengers['Sex'] =='female'), (passengers['Sex'] =='male')]
+survival_rate_by_sex = []
+for condition in sex_conditions:
+    survived = len(passengers[condition & passengers['Survived']])
+    total = len(passengers[condition])
+    survival_rate_by_sex.append(survived/total)
+    
+for i in range(len(sex_groups)):
+    print(sex_groups[i] + ': '+ str(survival_rate_by_sex[i]))
+
+# Exercise c
+
+class_groups = ['First', 'Second', 'Third']
+class_conditions = [(passengers['Pclass'] == 1), (passengers['Pclass'] == 2), (passengers['Pclass'] == 3)]
+survival_rate_by_class = []
+for condition in class_conditions:
+    survived = len(passengers[condition & passengers['Survived']])
+    total = len(passengers[condition])
+    survival_rate_by_class.append(survived/total)
+    
+for i in range(len(class_groups)):
+    print(class_groups[i] + ': '+ str(survival_rate_by_class[i]))
+    
+# Exercise d
+
+survival_rate_of_minors_by_sex = []
+for condition in sex_conditions:
+    survived = len(passengers[condition & age_conditions[0] & passengers['Survived']])
+    total = len(passengers[condition & age_conditions[0] ])
+    survival_rate_of_minors_by_sex.append(survived/total)
+    
+for i in range(len(sex_groups)):
+    print('Minor ' + sex_groups[i] + ': '+ str(survival_rate_of_minors_by_sex[i]))
+    
+# Exercise e
+
+survival_rate = []
+for age in range(len(age_conditions)):
+    for sex in range(len(sex_conditions)):
+        for travel_class in range(len(class_conditions)):
+            survived = len(passengers[age_conditions[age] & sex_conditions[sex] & class_conditions[travel_class] & passengers['Survived']])
+            total = len(passengers[age_conditions[age] & sex_conditions[sex] & class_conditions[travel_class]])
+            if total== 0:
+                print(age_groups[age]+", "+ sex_groups[sex] + ", " + class_groups[travel_class] + ": " + 'No passengers')
+            else:
+                print(age_groups[age]+", "+ sex_groups[sex] +", " + class_groups[travel_class] + ": " + str(survived/total))
+###week01_ex5_end
