@@ -12,3 +12,4 @@ dependencies:
   - ipywidgets>=8.1.0
   - jupyterlab
   - jupyterlab-git
+  - ipympl>=0.10.0
